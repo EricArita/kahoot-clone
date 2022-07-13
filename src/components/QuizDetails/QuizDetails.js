@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom"
 import Quiz from "../Quizes/Quiz/Quiz"
 import Question from "./Question/Question"
 import CommentSection from './CommentSection/CommentSection'
-import { getQuiz, getQuizesBySearch } from "../../actions/quiz"
+import { getQuiz, getQuizesBySearch } from "../../redux/thunk-middlewares/quiz"
 import useStyles from "./styles"
 
 const Post = () => {

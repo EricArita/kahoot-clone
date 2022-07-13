@@ -11,7 +11,7 @@ import timer from "../../assets/timer.svg"
 import gamePoints from "../../assets/gamePoints.svg"
 import answerOptions from "../../assets/answerOptions.svg"
 import { useDispatch, useSelector } from "react-redux"
-import { updateQuiz, getQuiz } from "../../actions/quiz"
+import { updateQuiz, getQuiz } from "../../redux/thunk-middlewares/quiz"
 import FileBase from "react-file-base64"
 import { useParams, useHistory } from "react-router-dom"
 

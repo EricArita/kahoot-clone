@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import WaitingRoom from "../WaitingRoom/WaitingRoom"
 import { useDispatch, useSelector } from "react-redux"
-import { getGame } from "../../../actions/game"
-import { getQuiz } from "../../../actions/quiz"
+import { getGame } from "../../../redux/thunk-middlewares/game"
+import { getQuiz } from "../../../redux/thunk-middlewares/quiz"
 import {
   getLeaderboard,
   updateQuestionLeaderboard,
   updateCurrentLeaderboard,
-} from "../../../actions/leaderboard"
+} from "../../../redux/thunk-middlewares/leaderboard"
 import styles from "./hostScreen.module.css"
 import Question from "../Question/Question"
 

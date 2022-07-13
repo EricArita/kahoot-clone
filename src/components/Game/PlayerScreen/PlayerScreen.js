@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { addAnswer, getPlayerResult } from "../../../actions/playerResult"
+import { addAnswer, getPlayerResult } from "../../../redux/thunk-middlewares/playerResult"
 import { useEffect } from "react"
 import styles from "./playerScreen.module.css"
 import Answer from "../Answer/Answer"

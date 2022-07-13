@@ -1,4 +1,4 @@
-import { FETCH_ALL_USERS, CREATE_USER, UPDATE_USER, DELETE_USER } from "../constants/actionTypes";
+import { FETCH_ALL_USERS, CREATE_USER, UPDATE_USER, DELETE_USER } from "../../constants/actionTypes";
 
 const reducer = (users = [], action) => {
   switch (action.type) {

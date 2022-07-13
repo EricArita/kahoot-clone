@@ -1,4 +1,4 @@
-import * as api from "../api"
+import * as api from "../../api"
 import {
   FETCH_ALL_QUIZES,
   FETCH_PUBLIC_QUIZES,
@@ -12,7 +12,7 @@ import {
   START_LOADING,
   END_LOADING,
   COMMENT_QUIZ
-} from "../constants/actionTypes"
+} from "../../constants/actionTypes"
 
 export const getQuizes = () => async (dispatch) => {
   try {

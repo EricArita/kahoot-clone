@@ -1,5 +1,5 @@
-import * as api from "../api";
-import { AUTH } from "../constants/actionTypes";
+import * as api from "../../api";
+import { AUTH } from "../../constants/actionTypes";
 
 export const login = (formData, history) => async (dispatch) => {
   try {

@@ -1,13 +1,13 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import styles from "./myQuiz.module.css"
-import { deleteQuiz } from "../../../actions/quiz"
-import { createGame } from "../../../actions/game"
+import { deleteQuiz } from "../../../redux/thunk-middlewares/quiz"
+import { createGame } from "../../../redux/thunk-middlewares/game"
 import moment from "moment"
 import DeleteIcon from "@material-ui/icons/Delete"
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz"
 import { useHistory } from "react-router-dom"
-import { createLeaderboard } from "../../../actions/leaderboard"
+import { createLeaderboard } from "../../../redux/thunk-middlewares/leaderboard"
 
 function MyQuiz({ quiz }) {
   const dispatch = useDispatch()

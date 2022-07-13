@@ -1,4 +1,4 @@
-import { CREATE_GAME, FETCH_GAME, ADD_PLAYER } from "../constants/actionTypes"
+import { CREATE_GAME, FETCH_GAME, ADD_PLAYER } from "../../constants/actionTypes"
 
 const reducer = (state = { games: [] }, action) => {
   switch (action.type) {

@@ -1,11 +1,11 @@
-import * as api from "../api"
+import * as api from "../../api"
 import {
   CREATE_LEADERBOARD,
   ADD_PLAYER_RESULT,
   FETCH_LEADERBOARD,
   UPDATE_QUESTION_LEADERBOARD,
   UPDATE_CURRENT_LEADERBOARD,
-} from "../constants/actionTypes"
+} from "../../constants/actionTypes"
 
 export const createLeaderboard = (leaderboardData) => async (dispatch) => {
   try {

@@ -4,7 +4,7 @@ import {
   FETCH_LEADERBOARD,
   UPDATE_QUESTION_LEADERBOARD,
   UPDATE_CURRENT_LEADERBOARD,
-} from "../constants/actionTypes"
+} from "../../constants/actionTypes"
 
 const reducer = (state = { leaderboards: [], leaderboard: null }, action) => {
   switch (action.type) {

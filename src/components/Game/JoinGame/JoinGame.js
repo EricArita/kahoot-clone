@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from "react"
 import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { CircularProgress } from "@material-ui/core"
-import { createPlayerResult } from "../../../actions/playerResult"
-import { addPlayer } from "../../../actions/game"
+import { createPlayerResult } from "../../../redux/thunk-middlewares/playerResult"
+import { addPlayer } from "../../../redux/thunk-middlewares/game"
 import styles from "./joinGame.module.css"
 
 function JoinGame() {

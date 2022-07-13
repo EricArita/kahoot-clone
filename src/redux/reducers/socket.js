@@ -1,4 +1,4 @@
-import { CREATE_SOCKET } from "../constants/actionTypes"
+import { CREATE_SOCKET } from "../../constants/actionTypes"
 
 const reducer = (state = { socket: null }, action) => {
   switch (action.type) {

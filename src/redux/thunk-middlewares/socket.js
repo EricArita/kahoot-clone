@@ -1,4 +1,4 @@
-import { CREATE_SOCKET } from "../constants/actionTypes"
+import { CREATE_SOCKET } from "../../constants/actionTypes"
 
 export const createSocket = (data) => async (dispatch) => {
   try {

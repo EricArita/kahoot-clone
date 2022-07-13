@@ -2,7 +2,7 @@ import {
   CREATE_PLAYER_RESULT,
   FETCH_PLAYER_RESULT,
   ADD_ANSWER,
-} from "../constants/actionTypes"
+} from "../../constants/actionTypes"
 
 const reducer = (state = { playerResults: [], playerResult: null }, action) => {
   switch (action.type) {

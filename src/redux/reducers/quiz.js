@@ -11,7 +11,7 @@ import {
   START_LOADING,
   END_LOADING,
   COMMENT_QUIZ,
-} from "../constants/actionTypes"
+} from "../../constants/actionTypes"
 
 const reducer = (state = { isLoading: true, quizes: [] }, action) => {
   switch (action.type) {

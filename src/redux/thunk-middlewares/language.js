@@ -1,4 +1,4 @@
-import { CHANGE_LANGUAGE } from "../constants/actionTypes"
+import { CHANGE_LANGUAGE } from "../../constants/actionTypes"
 
 export const changeLanguage = (data) => async (dispatch) => {
   try {

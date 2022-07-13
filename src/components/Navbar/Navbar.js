@@ -6,7 +6,7 @@ import decode from "jwt-decode"
 import * as actionType from "../../constants/actionTypes"
 import globe from "../../assets/globe.svg"
 import logo from "../../assets/logo.png"
-import { changeLanguage } from "../../actions/language"
+import { changeLanguage } from "../../redux/thunk-middlewares/language"
 
 function Navbar() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))

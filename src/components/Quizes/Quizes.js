@@ -12,7 +12,7 @@ import {
   CircularProgress,
 } from "@material-ui/core"
 import useStyles from "./styles"
-import { getQuizesBySearch } from "../../actions/quiz"
+import { getQuizesBySearch } from "../../redux/thunk-middlewares/quiz"
 import Pagination from "../Pagination/Pagination"
 
 function useQuery() {

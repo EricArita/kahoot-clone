@@ -13,7 +13,7 @@ import PlayerScreen from "./components/Game/PlayerScreen/PlayerScreen"
 import JoinGame from "./components/Game/JoinGame/JoinGame"
 import { io } from "socket.io-client"
 import { useDispatch } from "react-redux"
-import { createSocket } from "./actions/socket"
+import { createSocket } from "./redux/thunk-middlewares/socket"
 
 function App() {
   const user = JSON.parse(localStorage.getItem("profile"))

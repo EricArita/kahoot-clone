@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Pagination, PaginationItem } from "@material-ui/lab"
 import { Link } from "react-router-dom"
 
-import { getPublicQuizes } from "../../actions/quiz"
+import { getPublicQuizes } from "../../redux/thunk-middlewares/quiz"
 import useStyles from "./styles"
 
 const Paginate = ({ page }) => {

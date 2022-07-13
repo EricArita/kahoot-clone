@@ -1,9 +1,9 @@
-import * as api from "../api"
+import * as api from "../../api"
 import {
   CREATE_GAME,
   FETCH_GAME,
   ADD_PLAYER
-} from "../constants/actionTypes"
+} from "../../constants/actionTypes"
 
 export const createGame = (gameData, history) => async (dispatch) => {
   try {

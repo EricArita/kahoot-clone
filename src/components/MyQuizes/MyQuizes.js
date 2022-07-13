@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import MyQuiz from "./MyQuiz/MyQuiz"
 import { useDispatch, useSelector } from "react-redux"
-import { getTeacherQuizes, createQuiz } from "../../actions/quiz"
+import { getTeacherQuizes, createQuiz } from "../../redux/thunk-middlewares/quiz"
 import styles from "./myQuizes.module.css"
 import { useHistory } from "react-router-dom"
 
