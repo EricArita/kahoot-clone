@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react"
 import MyQuiz from "./MyQuiz/MyQuiz"
 import { useDispatch, useSelector } from "react-redux"
-import { getTeacherQuizes, createQuiz } from "../../redux/thunk-middlewares/quiz"
+import { getTeacherQuizes, createQuiz } from "../../redux/thunk-middlewares/quizMiddleware"
 import styles from "./myQuizes.module.css"
 import { useHistory } from "react-router-dom"
+import { quizExample } from "../../constants/quizData"
 
 function MyQuizes() {
-  const user = JSON.parse(localStorage.getItem("profile"))
+  const user = JSON.parse(localStorage.getItem("DEFAULT_USER"))
   const dispatch = useDispatch()
   const history = useHistory()
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
   const [quizData, setQuizData] = useState({
-    name: "asdasd",
-    creatorName: `${user?.result.firstName} ${user?.result.lastName}`,
+    name: "",
+    creatorName: `${user?.firstName} ${user?.lastName}`,
     backgroundImage: "",
     description: "",
     pointsPerQuestion: 1,
@@ -23,10 +24,6 @@ function MyQuizes() {
 
   const [isQuizPublic, setIsQuizPublic] = useState(true)
 
-  // useEffect(() => {
-  //   dispatch(getTeacherQuizes(user.result._id))
-  // }, [dispatch])
-
   const { quizes } = useSelector((state) => state.quiz)
 
   const handleQuizSubmit = () => {
@@ -34,16 +31,16 @@ function MyQuizes() {
   }
 
   const handleQuizChange = (e) => {
-    setQuizData({ ...quizData, [e.target.name]: e.target.value })
+    setQuizData({ ...quizData, _id: quizes.length + 1, [e.target.name]: e.target.value })
   }
 
   return (
     <div className={styles["quizes-list"]}>
       <div className={styles["quiz-settings"]}>
-        <h2>{"Create new quiz"}</h2>
+        <h2>{isLanguageEnglish ? "Create new quiz" : "Tạo bài kiểm tra mới"}</h2>
         <div className={styles["quiz-form"]}>
           <div className={styles["option-label"]}>
-            <label>{"Title"}</label>
+            <label>{isLanguageEnglish ? "Title" : "Tiêu đề"}</label>
           </div>
           <input
             value={quizData.name}
@@ -92,7 +89,7 @@ function MyQuizes() {
             onClick={handleQuizSubmit}
             className={styles["submit-button"]}
           >
-            "Create new quizz"
+            {isLanguageEnglish ? "Create new" : "Tạo mới"}
           </button>
         </div>
       </div>

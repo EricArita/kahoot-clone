@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react"
 import { Typography, TextField, Button } from "@material-ui/core/"
 import { useDispatch, useSelector } from "react-redux"
 
-import { commentQuiz } from "../../../redux/thunk-middlewares/quiz"
+import { commentQuiz } from "../../../redux/thunk-middlewares/quizMiddleware"
 import useStyles from "./styles"
 
 const CommentSection = ({ quiz }) => {

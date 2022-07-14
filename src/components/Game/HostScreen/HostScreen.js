@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import WaitingRoom from "../WaitingRoom/WaitingRoom"
 import { useDispatch, useSelector } from "react-redux"
 import { getGame } from "../../../redux/thunk-middlewares/game"
-import { getQuiz } from "../../../redux/thunk-middlewares/quiz"
+import { getQuiz } from "../../../redux/thunk-middlewares/quizMiddleware"
 import {
   getLeaderboard,
   updateQuestionLeaderboard,

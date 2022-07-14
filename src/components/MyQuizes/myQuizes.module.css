@@ -56,11 +56,13 @@
 }
 
 .submit-button {
-  width: 120px;
+  width: 150px;
   height: 50px;
+  background-color: rgb(12, 187, 12);
+  color: white;
 }
 
 .submit-button:hover {
-  background-color: green;
+  background-color: rgb(46, 205, 46);
   color: white;
 }

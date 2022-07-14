@@ -1,7 +1,7 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import styles from "./quiz.module.css"
-import { likeQuiz } from "../../../redux/thunk-middlewares/quiz"
+import { likeQuiz } from "../../../redux/thunk-middlewares/quizMiddleware"
 import { useHistory } from "react-router-dom"
 import moment from "moment"
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt"

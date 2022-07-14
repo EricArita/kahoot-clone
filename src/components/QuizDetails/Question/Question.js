@@ -5,7 +5,7 @@ import styles from "./question.module.css"
 function Question({ question }) {
   console.log(question)
   return (
-    <div className={styles["quiz-card"]}>
+    <div className={styles["question-card"]}>
       <div>
         <QuestionListItem
           key={question.questionIndex}

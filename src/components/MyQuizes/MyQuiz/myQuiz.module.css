@@ -8,6 +8,7 @@
   width: 75%;
   margin: 20px;
   transition: transform 200ms ease-in;
+  cursor: pointer;;
 }
 
 .card-body {

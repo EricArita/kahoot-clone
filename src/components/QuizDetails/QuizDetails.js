@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import {
   Paper,
   Typography,
@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom"
 import Quiz from "../Quizes/Quiz/Quiz"
 import Question from "./Question/Question"
 import CommentSection from './CommentSection/CommentSection'
-import { getQuiz, getQuizesBySearch } from "../../redux/thunk-middlewares/quiz"
+import { getQuiz, getQuizesBySearch } from "../../redux/thunk-middlewares/quizMiddleware"
 import useStyles from "./styles"
 
 const Post = () => {
@@ -20,18 +20,21 @@ const Post = () => {
   const dispatch = useDispatch()
   const classes = useStyles()
   const { id } = useParams()
+  const [quizDetail, setQuizDetail] = useState()
 
   useEffect(() => {
-    dispatch(getQuiz(id))
+    const currentQuiz = quizes.find(q => q._id === id);
+    console.log(currentQuiz)
+    setQuizDetail({...currentQuiz});
   }, [id])
 
-  useEffect(() => {
-    if (quiz) {
-      dispatch(
-        getQuizesBySearch({ search: "none", tags: quiz?.tags.join(",") })
-      )
-    }
-  }, [quiz])
+  // useEffect(() => {
+  //   if (quiz) {
+  //     dispatch(
+  //       getQuizesBySearch({ search: "none", tags: quiz?.tags.join(",") })
+  //     )
+  //   }
+  // }, [quiz])
 
   if (!quiz) return null
 

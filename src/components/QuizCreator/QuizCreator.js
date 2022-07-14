@@ -11,19 +11,20 @@ import timer from "../../assets/timer.svg"
 import gamePoints from "../../assets/gamePoints.svg"
 import answerOptions from "../../assets/answerOptions.svg"
 import { useDispatch, useSelector } from "react-redux"
-import { updateQuiz, getQuiz } from "../../redux/thunk-middlewares/quiz"
+import { updateQuiz, getQuiz } from "../../redux/thunk-middlewares/quizMiddleware"
 import FileBase from "react-file-base64"
 import { useParams, useHistory } from "react-router-dom"
 
 function QuizCreator() {
-  const user = JSON.parse(localStorage.getItem("profile"))
+  const user = JSON.parse(localStorage.getItem("DEFAULT_USEER"))
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
-
+  const quizes = useSelector((state) => state.quiz.quizes)
   const history = useHistory()
   const dispatch = useDispatch()
   const { id } = useParams()
 
   const [quizData, setQuizData] = useState({
+    _id: 0,
     name: "",
     creatorName: `${user?.result.firstName} ${user?.result.lastName}`,
     backgroundImage: "",
@@ -51,16 +52,9 @@ function QuizCreator() {
   })
 
   useEffect(() => {
-    dispatch(getQuiz(id))
-  }, [id])
-
-  const { quiz } = useSelector((state) => state.quiz)
-
-  useEffect(() => {
-    if (quiz) {
-      setQuizData(quiz)
-    }
-  }, [quiz])
+    const currQuiz = quizes.find(q => q._id === parseInt(id))
+    setQuizData({...currQuiz})
+  }, [])
 
   const [isQuizOptionsVisible, setIsQuizOptionsVisible] = useState(false)
   const [isQuizPublic, setIsQuizPublic] = useState(true)

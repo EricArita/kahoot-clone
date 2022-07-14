@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import styles from "./myQuiz.module.css"
-import { deleteQuiz } from "../../../redux/thunk-middlewares/quiz"
+import { deleteQuiz } from "../../../redux/thunk-middlewares/quizMiddleware"
 import { createGame } from "../../../redux/thunk-middlewares/game"
 import moment from "moment"
 import DeleteIcon from "@material-ui/icons/Delete"
@@ -46,7 +46,7 @@ function MyQuiz({ quiz }) {
   }, [])
 
   return (
-    <div className={styles["quiz-card"]}>
+    <div className={styles["quiz-card"]} onClick={openQuizPage}>
       <div className={styles["image-container"]}>
         <h3 className={styles["quiz-creator"]}>{quiz.creatorName}</h3>
         <h3 className={styles["quiz-date"]}>
@@ -69,9 +69,6 @@ function MyQuiz({ quiz }) {
           <div className={styles["card-buttons"]}>
             <button onClick={addGame}>
               {isLanguageEnglish ? "Start a game" : "Bắt đầu trò chơi"}
-            </button>
-            <button onClick={openQuizPage}>
-              <MoreHorizIcon fontSize="medium" />
             </button>
             <button onClick={() => dispatch(deleteQuiz(quiz._id))}>
               <DeleteIcon fontSize="small" />

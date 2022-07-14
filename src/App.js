@@ -14,17 +14,27 @@ import JoinGame from "./components/Game/JoinGame/JoinGame"
 import { io } from "socket.io-client"
 import { useDispatch } from "react-redux"
 import { createSocket } from "./redux/thunk-middlewares/socket"
+import { defaultUser } from "../src/constants/defaultUser"
 
 function App() {
   const user = JSON.parse(localStorage.getItem("profile"))
   const dispatch = useDispatch()
 
   useEffect(() => {
+   //initialSocket();
+   initialDefaultUser();
+  }, [])
+
+  const initialSocket = async () => {
     const socket = io("http://localhost:3001")
     dispatch(createSocket(socket))
 
     return () => socket.disconnect()
-  }, [dispatch])
+  }
+
+  const initialDefaultUser = () => {
+    localStorage.setItem("DEFAULT_USER", JSON.stringify(defaultUser))
+  }
 
   return (
     <BrowserRouter>
