@@ -11,7 +11,7 @@ function MyQuizes() {
   const history = useHistory()
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
   const [quizData, setQuizData] = useState({
-    name: "",
+    name: "asdasd",
     creatorName: `${user?.result.firstName} ${user?.result.lastName}`,
     backgroundImage: "",
     description: "",
@@ -23,9 +23,9 @@ function MyQuizes() {
 
   const [isQuizPublic, setIsQuizPublic] = useState(true)
 
-  useEffect(() => {
-    dispatch(getTeacherQuizes(user.result._id))
-  }, [dispatch])
+  // useEffect(() => {
+  //   dispatch(getTeacherQuizes(user.result._id))
+  // }, [dispatch])
 
   const { quizes } = useSelector((state) => state.quiz)
 
@@ -40,10 +40,10 @@ function MyQuizes() {
   return (
     <div className={styles["quizes-list"]}>
       <div className={styles["quiz-settings"]}>
-        <h2>{isLanguageEnglish ? "Create new quiz" : "Stwórz nowy quiz"}</h2>
+        <h2>{"Create new quiz"}</h2>
         <div className={styles["quiz-form"]}>
           <div className={styles["option-label"]}>
-            <label>{isLanguageEnglish ? "Title" : "Nazwa"}</label>
+            <label>{"Title"}</label>
           </div>
           <input
             value={quizData.name}
@@ -92,7 +92,7 @@ function MyQuizes() {
             onClick={handleQuizSubmit}
             className={styles["submit-button"]}
           >
-            {isLanguageEnglish ? "Create new quiz" : "Stwórz nowy quiz"}
+            "Create new quizz"
           </button>
         </div>
       </div>

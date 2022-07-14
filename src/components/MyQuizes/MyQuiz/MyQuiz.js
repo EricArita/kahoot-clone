@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import styles from "./myQuiz.module.css"
 import { deleteQuiz } from "../../../redux/thunk-middlewares/quiz"
@@ -24,19 +24,33 @@ function MyQuiz({ quiz }) {
       isLive: true,
       pin: String(Math.floor(Math.random() * 9000) + 1000),
     }
-    const newGame = await dispatch(createGame(gameData, history))
-    let leaderboardData = { gameId: newGame._id, playerResultList: [] }
+    // const newGame = await dispatch(createGame(gameData, history))
+    // let leaderboardData = { gameId: newGame._id, playerResultList: [] }
     
-    const newLeaderboard = await dispatch(createLeaderboard(leaderboardData))
-    socket.emit("init-game", newGame, newLeaderboard)
+    // const newLeaderboard = await dispatch(createLeaderboard(leaderboardData))
+    // socket.emit("init-game", newGame, newLeaderboard)
   }
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    quiz = {
+      //dateCreated: '2022-07-20Z00:00:00'
+      backgroundImage: '',
+      tags: [''],
+      _id: 1,
+      name: '1asff',
+      numberOfQuestions: 1,
+      description: '',
+      creatorName: ''
+    }
+  }, [])
 
   return (
     <div className={styles["quiz-card"]}>
       <div className={styles["image-container"]}>
         <h3 className={styles["quiz-creator"]}>{quiz.creatorName}</h3>
         <h3 className={styles["quiz-date"]}>
-          {moment(quiz.dateCreated).fromNow()}
+          {/* {moment(quiz.dateCreated).fromNow()} */}
         </h3>
         <div
           className={styles["quiz-image"]}

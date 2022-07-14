@@ -8,7 +8,8 @@ import img5 from "../../assets/img5.svg"
 import { useSelector } from "react-redux"
 
 function Home() {
-  const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
+  //const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
+  const isLanguageEnglish = true
 
   return (
     <main className={styles.page}>

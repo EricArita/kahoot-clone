@@ -12,7 +12,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Input from "./Input";
-import { login, register } from "../../redux/thunk-middlewares/auth";
+import { loginMiddleware, registerMiddleware } from "../../redux/thunk-middlewares/authMiddleware";
 
 const initialState = {
   userType: "",
@@ -36,11 +36,10 @@ function Auth() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
     if (isSignup) {
-      dispatch(register(formData, history))
+      dispatch(registerMiddleware(formData, history))
     } else {
-      dispatch(login(formData, history))
+      dispatch(loginMiddleware(formData, history))
     }
   };
 

@@ -72,7 +72,18 @@ export const getQuestions = () => async (dispatch) => {
 
 export const createQuiz = (quiz, history) => async (dispatch) => {
   try {
-    const { data } = await api.createQuiz(quiz)
+    //const { data } = await api.createQuiz(quiz)
+    const data = {
+      name: "asdas",
+      creatorName: ``,
+      backgroundImage: "",
+      description: "",
+      pointsPerQuestion: 1,
+      isPublic: true,
+      tags: [],
+      questionList: [],
+      _id: 1
+    }
     dispatch({ type: CREATE_QUIZ, payload: data })
     history.push(`/myquizes/${data._id}`)
   } catch (error) {

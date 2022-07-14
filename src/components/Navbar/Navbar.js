@@ -9,7 +9,7 @@ import logo from "../../assets/logo.png"
 import { changeLanguage } from "../../redux/thunk-middlewares/language"
 
 function Navbar() {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")))
+  const [user, setUser] = useState(1)
   const dispatch = useDispatch()
   const location = useLocation()
   const history = useHistory()
@@ -31,7 +31,7 @@ function Navbar() {
         logout()
       }
     }
-    setUser(JSON.parse(localStorage.getItem("profile")))
+    setUser(1)
   }, [location])
 
   return (
@@ -70,22 +70,20 @@ function Navbar() {
               {isLanguageEnglish ? "Contact" : "Kontakt"}
             </li>
 
-            {user ? (
+            {user === 1 ? (
               <>
-                  <li className={styles["nav__list-item"]}>
+                <li className={styles["nav__list-item"]}>
                   <Link to="/games/joingame">
                     {isLanguageEnglish ? "Play" : "Graj"}
                   </Link>
                 </li>
-                {user.result.userType === "Teacher" && (
-                  <li className={styles["nav__list-item"]}>
+                <li className={styles["nav__list-item"]}>
                     <Link to="/myquizes">
                       {isLanguageEnglish ? "My Quizes" : "Moje Quizy"}
                     </Link>
                   </li>
-                )}
                 <li className={styles["nav__list-item"]}>
-                  {user.result.firstName}
+                  {/* {user.result.firstName} */}
                 </li>
                 <li onClick={logout} className={styles["nav__list-item"]}>
                   {isLanguageEnglish ? "Log out" : "Wyloguj"}
@@ -93,7 +91,7 @@ function Navbar() {
               </>
             ) : (
               <Link to="/auth" className={styles["nav__list-item"]}>
-                {isLanguageEnglish ? "Log in" : "Zaloguj"}
+                {isLanguageEnglish ? "Log innn" : "Zaloguj"}
               </Link>
             )}
             <li className={styles["nav__list-item"]}>
