@@ -13,55 +13,55 @@ function Footer() {
       <div className={styles["footer-container"]}>
         <div className={styles["footer-row"]}>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "About" : "O nas"}</h4>
+            <h4>{isLanguageEnglish ? "About" : "Về chúng tôi"}</h4>
             <ul>
               <li>
-                <a href="/">{isLanguageEnglish ? "Company" : "Firma"}</a>
+                <a href="/">{isLanguageEnglish ? "Company" : "Công ty"}</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "Service" : "Usługi"}</a>
+                <a href="/">{isLanguageEnglish ? "Service" : "Dịch vụ"}</a>
               </li>
               <li>
                 <a href="/">Blog</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "Contact" : "Kontakt"}</a>
+                <a href="/">{isLanguageEnglish ? "Contact" : "Liên hệ"}</a>
               </li>
             </ul>
           </div>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Application" : "Aplikacja"}</h4>
+            <h4>{isLanguageEnglish ? "Application" : "Ứng dụng"}</h4>
             <ul>
               <li>
-                <a href="/">{isLanguageEnglish ? "At home" : "W domu"}</a>
+                <a href="/">{isLanguageEnglish ? "At home" : "Tại nhà"}</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "At school" : "W szkole"}</a>
+                <a href="/">{isLanguageEnglish ? "At school" : "Tại trường"}</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "At work" : "W pracy"}</a>
+                <a href="/">{isLanguageEnglish ? "At work" : "Tại nơi làm việc"}</a>
               </li>
             </ul>
           </div>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Terms and conditions" : "Regulamin"}</h4>
+            <h4>{isLanguageEnglish ? "Terms and conditions" : "Các điều khoản và điều kiện"}</h4>
             <ul>
               <li>
                 <a href="/">
-                  {isLanguageEnglish ? "Terms and conditions" : "Regulamin"}
+                  {isLanguageEnglish ? "Terms and conditions" : "Các điều khoản và điều kiện"}
                 </a>
               </li>
               <li>
                 <a href="/">
                   {isLanguageEnglish
                     ? "Privacy Policy"
-                    : "Polityka prywatności"}
+                    : "Chính sách bảo mật"}
                 </a>
               </li>
             </ul>
           </div>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Follow us" : "Śledź nas"}</h4>
+            <h4>{isLanguageEnglish ? "Follow us" : "Theo dõi chúng tôi"}</h4>
             <div className={styles["footer-social-links"]}>
               <a href="/">
                 <FacebookIcon />

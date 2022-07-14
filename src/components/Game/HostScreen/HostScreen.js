@@ -168,7 +168,7 @@ function HostScreen() {
         <div className={styles.lobby}>
           <WaitingRoom pin={game?.pin} socket={socket} />
           <button onClick={startGame}>
-            {isLanguageEnglish ? "Start a game" : "Rozpocznij grę"}
+            {isLanguageEnglish ? "Start a game" : "Bắt đầu trò chơi"}
           </button>
         </div>
       )}
@@ -192,7 +192,7 @@ function HostScreen() {
         <div className={styles["question-preview"]}>
           <div className={styles["leaderboard"]}>
             <h1 className={styles["leaderboard-title"]}>
-              {isLanguageEnglish ? "Question result" : "Wynik pytania"}
+              {isLanguageEnglish ? "Question result" : "Kết quả của câu hỏi"}
             </h1>
             <ol>
               {questionResult.questionResultList.map((player) => (
@@ -213,7 +213,7 @@ function HostScreen() {
         <div className={styles["question-preview"]}>
           <div className={styles["leaderboard"]}>
             <h1 className={styles["leaderboard-title"]}>
-              {isLanguageEnglish ? "Leaderboard" : "Tablica wyników"}
+              {isLanguageEnglish ? "Leaderboard" : "Bảng xếp hạng"}
             </h1>
             <ol>
               {currentLeaderboard.leaderboardList.map((player) => (

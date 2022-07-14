@@ -54,25 +54,25 @@ function JoinGame() {
     <div className={styles.page}>
       {!isPlayerAdded ? (
         <div className={styles.section}>
-          <h2>{isLanguageEnglish ? "Join game" : "Dołącz do gry"}</h2>
+          <h2>{isLanguageEnglish ? "Join game" : "Tham gia trò chơi"}</h2>
           <input
             type="text"
             ref={pinRef}
             placeholder={
-              isLanguageEnglish ? "Write here a pin" : "Wpisz tutaj pin"
+              isLanguageEnglish ? "Write here a pin" : "Nhập mã pin tại đây"
             }
           />
           <button onClick={joinGame}>
-            {isLanguageEnglish ? "Send" : "Wyślij"}
+            {isLanguageEnglish ? "Send" : "Gửi"}
           </button>
         </div>
       ) : (
         <div className={styles.section}>
           <h2>
-            {isLanguageEnglish ? "You joined the game" : "Dołączyłeś do gry"}
+            {isLanguageEnglish ? "You joined the game" : "Bạn đã tham gia trò chơi"}
           </h2>
           <h4>
-            {isLanguageEnglish ? "Waiting on a host to start the game" : "Zaczekaj na rozpoczęcie gry przez hosta"}
+            {isLanguageEnglish ? "Waiting on a host to start the game" : "Chờ người chủ trì bắt đầu trò chơi"}
           </h4>
           <CircularProgress />
         </div>

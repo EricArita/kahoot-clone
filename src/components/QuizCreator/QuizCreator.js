@@ -275,7 +275,7 @@ function QuizCreator() {
                 : quizData.name
               : isLanguageEnglish
               ? "Set quiz name"
-              : "Wprowadź nazwę quizu"}
+              : "Đặt tên bài kiểm tra"}
           </h1>
           <button
             className={styles["quiz-info-button"]}
@@ -504,7 +504,7 @@ function QuizCreator() {
                 color: isQuizPublic ? "rgb(110, 110, 110)" : "white",
               }}
             >
-              {isLanguageEnglish ? "Private" : "Prywatny"}
+              {isLanguageEnglish ? "Private" : "Riêng tư"}
             </button>
           </div>
           <div className={styles["option-label"]}>
@@ -543,7 +543,7 @@ function QuizCreator() {
               className={styles["option-button"]}
               onClick={handleQuizSubmit}
             >
-              {isLanguageEnglish ? "Submit" : "Submit"}
+              {isLanguageEnglish ? "Submit" : "Nộp bài"}
             </button>
           </div>
         </div>

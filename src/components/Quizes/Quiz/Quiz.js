@@ -24,12 +24,12 @@ function Quiz({ quiz }) {
           {quiz.likesCount.length > 2
             ? isLanguageEnglish
               ? `You and ${quiz.likesCount.length - 1} others`
-              : `Ty i ${quiz.likesCount.length - 1} innych`
+              : `Bạn và ${quiz.likesCount.length - 1} người khác`
             : isLanguageEnglish
             ? `${quiz.likesCount.length} like${
                 quiz.likesCount.length > 1 ? "s" : ""
               }`
-            : `${quiz.likesCount.length} osób polubiło`}
+            : `${quiz.likesCount.length} lượt thích`}
         </>
       ) : (
         <>
@@ -38,10 +38,10 @@ function Quiz({ quiz }) {
           {quiz.likesCount.length === 1
             ? isLanguageEnglish
               ? "Like"
-              : "Polubienie"
+              : "Giống"
             : isLanguageEnglish
             ? "Likes"
-            : "Polubienia"}
+            : "Thích"}
         </>
       )
     }
@@ -66,7 +66,7 @@ function Quiz({ quiz }) {
           style={{ backgroundImage: "url('" + quiz.backgroundImage + "')" }}
         ></div>
         <h3 className={styles["quiz-question-number"]}>
-          {isLanguageEnglish ? "Questions:" : "Pytania:"}{" "}
+          {isLanguageEnglish ? "Questions:" : "Câu hỏi:"}{" "}
           {quiz.numberOfQuestions}
         </h3>
       </div>

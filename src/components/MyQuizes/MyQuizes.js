@@ -52,7 +52,7 @@ function MyQuizes() {
             onChange={handleQuizChange}
           />
           <div className={styles["option-label"]}>
-            <label>{isLanguageEnglish ? "Description" : "Opis"}</label>
+            <label>{isLanguageEnglish ? "Description" : "Mô tả"}</label>
           </div>
           <input
             value={quizData.description}
@@ -72,7 +72,7 @@ function MyQuizes() {
                 color: isQuizPublic ? "white" : "rgb(110, 110, 110)",
               }}
             >
-              {isLanguageEnglish ? "Public" : "Publiczny"}
+              {isLanguageEnglish ? "Public" : "Công khai"}
             </button>
             <button
               onClick={() => {
@@ -85,7 +85,7 @@ function MyQuizes() {
                 color: isQuizPublic ? "rgb(110, 110, 110)" : "white",
               }}
             >
-              {isLanguageEnglish ? "Private" : "Prywatny"}
+              {isLanguageEnglish ? "Private" : "Riêng tư"}
             </button>
           </div>
           <button

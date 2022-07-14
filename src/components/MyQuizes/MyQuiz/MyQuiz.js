@@ -57,7 +57,7 @@ function MyQuiz({ quiz }) {
           style={{ backgroundImage: "url('" + quiz.backgroundImage + "')" }}
         ></div>
         <h3 className={styles["quiz-question-number"]}>
-          {isLanguageEnglish ? "Questions:" : "Pytania:"}{" "}
+          {isLanguageEnglish ? "Questions:" : "Câu hỏi:"}{" "}
           {quiz.numberOfQuestions}
         </h3>
       </div>
@@ -68,14 +68,14 @@ function MyQuiz({ quiz }) {
           </h4>
           <div className={styles["card-buttons"]}>
             <button onClick={addGame}>
-              {isLanguageEnglish ? "Start a game" : "Rozpocznij grę"}
+              {isLanguageEnglish ? "Start a game" : "Bắt đầu trò chơi"}
             </button>
             <button onClick={openQuizPage}>
               <MoreHorizIcon fontSize="medium" />
             </button>
             <button onClick={() => dispatch(deleteQuiz(quiz._id))}>
               <DeleteIcon fontSize="small" />
-              {isLanguageEnglish ? "Delete" : "Usuń"}
+              {isLanguageEnglish ? "Delete" : "Xoá"}
             </button>
           </div>
         </div>

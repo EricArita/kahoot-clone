@@ -20,18 +20,18 @@ function Home() {
               <h2 className={styles["banner-title"]}>
                 {isLanguageEnglish
                   ? "Make learning awesome"
-                  : "Spraw, aby nauka stała się niesamowita"}
+                  : "Làm cho việc học trở nên thú vị"}
               </h2>
               <p className={styles["banner-description"]}>
                 {isLanguageEnglish
                   ? "Quizzly delivers engaging learning to billions"
-                  : "Quizzly zapewnia angażującą naukę milionom użytkowników"}
+                  : "Quizzly cung cấp cho hàng triệu người dùng cách học hấp dẫn"}
               </p>
               <button className={styles["banner-button"]}>
                 <a href="/">
                   {isLanguageEnglish
                     ? "Sign up for free"
-                    : "Zarejestruj się za darmo"}
+                    : "Đăng ký miễn phí"}
                 </a>
               </button>
             </div>
@@ -40,18 +40,18 @@ function Home() {
           <div className={styles.banner}>
             <div className={styles["banner-body"]}>
               <h2 className={styles["banner-title"]}>
-                {isLanguageEnglish ? "Explore content" : "Przeglądaj treść"}
+                {isLanguageEnglish ? "Explore content" : "Khám phá nội dung"}
               </h2>
               <p className={styles["banner-description"]}>
                 {isLanguageEnglish
                   ? "Explore content and join one of the world’s largest educator communities."
-                  : "Przeglądaj treści i dołącz do jednej z największych na świecie społeczności nauczycieli"}
+                  : "Khám phá nội dung và tham gia một trong những cộng đồng nhà giáo dục lớn nhất thế giới."}
               </p>
               <button className={styles["banner-button"]}>
                 <a href="/">
                   {isLanguageEnglish
                     ? "Check public quizes"
-                    : "Sprawdź publiczne quizy"}
+                    : "Xem các câu đố công khai"}
                 </a>
               </button>
             </div>
@@ -63,45 +63,45 @@ function Home() {
           <div className={styles.info}>
             <div className={styles["info-body"]}>
               <h2 className={styles["info-title"]}>
-                {isLanguageEnglish ? "Quizzly at school" : "Quizzly w szkole"}
+                {isLanguageEnglish ? "Quizzly at school" : "Quizzly tại trường"}
               </h2>
               <p className={styles["info-description"]}>
                 {isLanguageEnglish
                   ? "Engaging group and distance learning for teachers and students."
-                  : "Angażująca nauka grupowa i na odległość dla nauczycieli i uczniów."}
+                  : "Tương tác nhóm và đào tạo từ xa cho giáo viên và học sinh."}
               </p>
               <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Dowiedz się więcej"} &gt;
+                {isLanguageEnglish ? "Learn more" : "Tìm hiểu thêm"} &gt;
               </a>
             </div>
           </div>
           <div className={styles.info}>
             <div className={styles["info-body"]}>
               <h2 className={styles["info-title"]}>
-                {isLanguageEnglish ? "Quizzly at work" : "Quizzly w pracy"}
+                {isLanguageEnglish ? "Quizzly at work" : "Quizzly tại nơi làm việc"}
               </h2>
               <p className={styles["info-description"]}>
                 {isLanguageEnglish
                   ? "Deliver training, presentations, meetings and events in-person or on any video conferencing platform."
-                  : "Realizuj szkolenia, prezentacje, spotkania i wydarzenia osobiście lub na dowolnej platformie do wideokonferencji."}
+                  : "Cung cấp các khóa đào tạo, thuyết trình, cuộc họp và sự kiện trực tiếp hoặc trên bất kỳ nền tảng hội nghị truyền hình nào."}
               </p>
               <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Dowiedz się więcej"} &gt;
+                {isLanguageEnglish ? "Learn more" : "Tìm hiểu thêm"} &gt;
               </a>
             </div>
           </div>
           <div className={styles.info}>
             <div className={styles["info-body"]}>
               <h2 className={styles["info-title"]}>
-                {isLanguageEnglish ? "Quizzly at home" : "Quizzly w domu"}
+                {isLanguageEnglish ? "Quizzly at home" : "Quizzly tại nhà"}
               </h2>
               <p className={styles["info-description"]}>
                 {isLanguageEnglish
                   ? "Learning Apps and games for family fun or home study."
-                  : "Gry edukacyjne do rodzinnej zabawy lub nauki w domu."}
+                  : "Ứng dụng và trò chơi học tập cho gia đình vui chơi hoặc học tập tại nhà."}
               </p>
               <a href="/" className={styles["info-link"]}>
-                {isLanguageEnglish ? "Learn more" : "Dowiedz się więcej"} &gt;
+                {isLanguageEnglish ? "Learn more" : "Tìm hiểu thêm"} &gt;
               </a>
             </div>
           </div>
@@ -110,17 +110,17 @@ function Home() {
           <h1>
             {isLanguageEnglish
               ? "How does Quizzly work?"
-              : "Jak działa aplikacja?"}
+              : "Quizzly hoạt động như thế nào?"}
           </h1>
           <div className={styles["card-container"]}>
             <div className={styles.card}>
               <img src={img3} alt="" />
               <div className={styles["card-body"]}>
-                <h1>{isLanguageEnglish ? "Create" : "Twórz"}</h1>
+                <h1>{isLanguageEnglish ? "Create" : "Tạo mới"}</h1>
                 <p>
                   {isLanguageEnglish
                     ? "It only takes minutes to create a learning game or trivia quiz on any topic, in any language."
-                    : "Stworzenie quizu na dowolny temat, w dowolnym języku zajmuje tylko kilka minut."}
+                    : "Chỉ mất vài phút để tạo một trò chơi học tập hoặc câu đố đố vui về bất kỳ chủ đề nào, bằng bất kỳ ngôn ngữ nào."}
                 </p>
               </div>
             </div>
@@ -130,23 +130,23 @@ function Home() {
                 <h1>
                   {isLanguageEnglish
                     ? "Host or share"
-                    : "Hostuj albo udostępnij"}
+                    : "Tổ chức hoặc chia sẻ"}
                 </h1>
                 <p>
                   {isLanguageEnglish
                     ? "Host a live game with questions on a big screen or share a game with remote players."
-                    : "Przeprowadź grę na żywo z pytaniami na dużym ekranie lub udostępnij gra ze zdalnymi graczami."}
+                    : "Tổ chức trò chơi trực tiếp với các câu hỏi trên màn hình lớn hoặc chia sẻ trò chơi với những người chơi từ xa."}
                 </p>
               </div>
             </div>
             <div className={styles.card}>
               <img src={img5} alt="" />
               <div className={styles["card-body"]}>
-                <h1>{isLanguageEnglish ? "Play" : "Graj"}</h1>
+                <h1>{isLanguageEnglish ? "Play" : "Chơi"}</h1>
                 <p>
                   {isLanguageEnglish
-                    ? "Game on! Join a kahoot with a PIN provided by the host and answer questions on your device."
-                    : "Graj dalej! Dołącz do kahoot za pomocą kodu PIN dostarczonego przez gospodarza i odpowiadać na pytania na swoim urządzeniu."}
+                    ? "Game on! Join a Quizzly with a PIN provided by the host and answer questions on your device."
+                    : "Trò chơi tiếp tục! Tham gia Quizzly bằng mã PIN do người chủ trì cung cấp và trả lời các câu hỏi trên thiết bị của bạn."}
                 </p>
               </div>
             </div>
@@ -154,12 +154,12 @@ function Home() {
           <div className={styles["card-button"]}>
             {isLanguageEnglish
               ? "Play Quizzly to see how it works."
-              : "Zagraj w Quizzly, aby zobaczyć, jak to działa."}{" "}
+              : "Chơi Quizzly để xem nó hoạt động như thế nào."}{" "}
             &nbsp;
             <a href="/">
               {isLanguageEnglish
                 ? "Explore our public quizes"
-                : "Przeglądaj publiczne quizy"}
+                : "Khám phá các câu hỏi công khai của chúng tôi"}
             </a>
           </div>
         </section>
