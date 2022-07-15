@@ -78,19 +78,19 @@ function Navbar() {
                   </Link>
                 </li>
                 <li className={styles["nav__list-item"]}>
-                    <Link to="/myquizes">
-                      {isLanguageEnglish ? "My Quizes" : "Câu đố của tôi"}
-                    </Link>
-                  </li>
+                  <Link to="/myquizes">
+                    {isLanguageEnglish ? "My Quizes" : "Câu đố của tôi"}
+                  </Link>
+                </li>
                 <li className={styles["nav__list-item"]}>
                   {/* {user.result.firstName} */}
                 </li>
-                <li onClick={logout} className={styles["nav__list-item"]}>
+                <li onClick={logout} className={styles["nav__list-item-bg"]}>
                   {isLanguageEnglish ? "Log out" : "Đăng xuất"}
                 </li>
               </>
             ) : (
-              <Link to="/auth" className={styles["nav__list-item"]}>
+              <Link to="/auth" className={styles["nav__list-item-bg"]}>
                 {isLanguageEnglish ? "Log in" : "Đăng nhập"}
               </Link>
             )}

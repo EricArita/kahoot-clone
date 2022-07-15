@@ -22,7 +22,7 @@ body {
   width: 100vw;
   z-index: 2;
   background: #fff;
-  height: 6vh;
+  height: 100px;
   box-shadow: 0 0 10px #80838b;
   display: flex;
   justify-content: space-between;
@@ -34,7 +34,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   gap: 2rem;
-  margin: 0 2rem;
+  margin: 0 10rem;
 }
 
 .nav__list-logo {
@@ -44,12 +44,13 @@ body {
 }
 
 .logo-img{
-  width: 50px;
+  width: 200px;
 }
 
-.nav__list-item {
+.nav__list-name {
   list-style: none;
   font-weight: bold;
+  font-size: 2.5rem;
   position: relative;
   padding: 1.5rem 1rem;
   cursor: pointer;
@@ -57,7 +58,45 @@ body {
   align-items: center;
 }
 
-.nav__list-item::after {
+.nav__list-item {
+  list-style: none;
+  font-weight: normal;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 1.5rem 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list-item-bg {
+  list-style: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: relative;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #084a74;
+  color: white;
+  border-radius: 1rem;
+}
+
+
+
+.nav__list-item:hover,
+.nav__list-item:focus {
+  background-color: #fff6e6;
+  border-radius: 1rem;
+}
+
+.nav__list-item-bg:hover,
+.nav__list-item-bg:focus {
+  background-color: #073d5f;
+}
+
+/* .nav__list-item::after {
   content: "";
   width: 0;
   height: 0.3rem;
@@ -72,7 +111,7 @@ body {
 .nav__list-item:hover::after,
 .nav__list-item:focus::after {
   width: 80%;
-}
+} */
 
 .nav__list-item:hover ul,
 .nav__list-item:focus ul {
@@ -83,7 +122,7 @@ body {
 .nav__list-item-drop {
   position: absolute;
   top: 4rem;
-  left: -1rem;
+  left: 0rem;
   box-shadow: 0 0 10px #e1e5ee;
   background-color: white;
   border-radius: 0.2rem;
