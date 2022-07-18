@@ -8,13 +8,18 @@
 }
 
 .quiz-settings {
-  width: 75%;
-  padding: 5px;
+  width: 50%;
+  padding: 25px;
   box-shadow: 0px 0px 5px #80838b;
+  /* background-color: #084a74; */
+  background-color: white;
+  border-radius: 10px;
 }
 
-.quiz-settings h2{
-  margin: 5px;
+.quiz-settings h2 {
+  font-size: 2rem;
+  margin: 15px 5px;
+  color: black;
 }
 
 .quiz-form {
@@ -31,38 +36,146 @@
 .option-label {
   display: flex;
   align-items: center;
-  padding: 5px;
+  padding: 0px;
+  font-weight: bold;
+  color: black;
 }
 
-.option-buttons{
+.option-buttons {
   display: flex;
   align-items: center;
 }
 
 .option-button,
 .submit-button {
-  margin: 5px;
+  margin: 5px 0;
   background-color: inherit;
   outline: none;
   color: rgb(110, 110, 110);
   font-size: 0.8rem;
-  border: 1px solid black;
-  border-radius: 2%;
 }
 
-.option-button{
+.option-button {
   width: 100px;
-  height: 30px;
+  height: 40px;
+  background-color: rgb(255, 213, 0);
+  border: 1px solid #084a74;
+  font-size: 0.8rem;
 }
 
 .submit-button {
-  width: 150px;
+  width: 200px;
   height: 50px;
-  background-color: rgb(12, 187, 12);
+  margin-left: calc(50% - 100px);
+  border-radius: 10px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
   color: white;
+  background-color: rgb(37, 161, 37);
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
 }
 
 .submit-button:hover {
-  background-color: rgb(46, 205, 46);
+  background-color: rgb(31, 139, 31);
   color: white;
+  box-shadow: 0px 18px 25px rgba(0, 0, 0, 0.1);
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 8px 0px 15px 0px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus {
+  outline-color: #084a74;
+  outline-width: thin;
+}
+
+.wrapper {
+  display: inline-flex;
+  background: #fff;
+  height: 100px;
+  width: 400px;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 20px 15px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .option {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid lightgrey;
+  transition: all 0.3s ease;
+}
+
+.wrapper .option .dot {
+  height: 20px;
+  width: 20px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  position: relative;
+}
+
+.wrapper .option .dot::before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  background: #0069d9;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1.5);
+  transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#option-1:checked:checked~.option-1,
+#option-2:checked:checked~.option-2 {
+  border-color: #0069d9;
+  background: #0069d9;
+}
+
+#option-1:checked:checked~.option-1 .dot,
+#option-2:checked:checked~.option-2 .dot {
+  background: #fff;
+}
+
+#option-1:checked:checked~.option-1 .dot::before,
+#option-2:checked:checked~.option-2 .dot::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.wrapper .option span {
+  font-size: 20px;
+  color: #808080;
+}
+
+#option-1:checked:checked~.option-1 span,
+#option-2:checked:checked~.option-2 span {
+  color: red;
 }

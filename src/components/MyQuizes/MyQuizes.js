@@ -47,6 +47,7 @@ function MyQuizes() {
             type="text"
             name="name"
             onChange={handleQuizChange}
+            placeholder={isLanguageEnglish ? "Enter title..." : "Nhập tiêu đề..."}
           />
           <div className={styles["option-label"]}>
             <label>{isLanguageEnglish ? "Description" : "Mô tả"}</label>
@@ -56,6 +57,7 @@ function MyQuizes() {
             type="text"
             name="description"
             onChange={handleQuizChange}
+            
           />
           <div className={styles["option-buttons"]}>
             <button
@@ -65,8 +67,10 @@ function MyQuizes() {
               }}
               className={styles["option-button"]}
               style={{
-                backgroundColor: isQuizPublic ? "rgb(19, 104, 206)" : "inherit",
-                color: isQuizPublic ? "white" : "rgb(110, 110, 110)",
+                borderRadius: "10px 0 0 10px",
+                backgroundColor: isQuizPublic ? "#084a74" : "inherit",
+                color: isQuizPublic ? "white" : "rgb(170, 169, 169)",
+                fontWeight : isQuizPublic ? "bold" : "normal"
               }}
             >
               {isLanguageEnglish ? "Public" : "Công khai"}
@@ -78,8 +82,10 @@ function MyQuizes() {
               }}
               className={styles["option-button"]}
               style={{
-                backgroundColor: isQuizPublic ? "inherit" : "rgb(19, 104, 206)",
-                color: isQuizPublic ? "rgb(110, 110, 110)" : "white",
+                borderRadius: "0 10px 10px 0",
+                backgroundColor: isQuizPublic ? "inherit" : "#084a74",
+                color: isQuizPublic ? "rgb(170, 169, 169)" : "white",
+                fontWeight : isQuizPublic ? "normal" : "bold"
               }}
             >
               {isLanguageEnglish ? "Private" : "Riêng tư"}
