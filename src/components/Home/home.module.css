@@ -30,7 +30,7 @@ main .page {
 /* FIRST SECTION */
 
 .first-section {
-  margin: 1.5rem;
+  margin: 65px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 40rem));
   grid-gap: 2rem;
@@ -39,20 +39,21 @@ main .page {
 
 .banner {
   overflow: hidden;
-  background-color: #431b93;
+  background-color: #084a74;
   box-shadow: 0px 2px 20px #cfd8dc;
   border-radius: 0.2rem;
   display: flex;
   justify-content: space-between;
   height: 18rem;
   transition: transform 200ms ease-in;
+  border-radius: 10px;
 }
 
 .banner-body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .banner-image {
@@ -61,28 +62,30 @@ main .page {
 }
 
 .banner-title {
-  padding: 1rem;
+  padding: 30px 30px 0 30px;
   color: white;
   font-weight: 900;
+  height: 100px;
 }
 
 .banner-description {
-  padding: 0 1rem;
-  color: #c2a5df;
+  margin: 0;
+  padding: 0 30px 30px 30px;
+  color: white;
 }
 
 .banner-button {
-  padding: 0.5rem;
+  padding: 0.75rem;
   font-family: inherit;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
-  margin: 1rem;
+  margin: 30px;
   border: 2px solid #fff;
   background: transparent;
   color: #fff;
   border-radius: 0.2rem;
-  background-color: #26890c;
+  background-color: #ffc802;
   transition: transform 300ms ease-in;
 }
 
@@ -116,14 +119,13 @@ main .page {
   margin: 1.5rem;
   background-color: white;
   box-shadow: 0px 3px 20px #838688;
-  border-radius: 0.2rem;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   height: 13rem;
   transition: transform 200ms ease-in;
   z-index: 1;
-  border: solid 1px #c60929;
 }
 
 .info-body {
@@ -142,6 +144,7 @@ main .page {
 }
 
 .info-description {
+  margin: 0;
   font-size: 0.875rem;
   padding: 0 1rem;
   color: #6e6e6e;
@@ -185,7 +188,7 @@ main .page {
   position: relative;
   line-height: 1.8;
   background-color: #0542b9;
-  border-radius: 0.25 rem;
+  border-radius: 10px;
   width: 40%;
   margin: auto;
   margin-top: 3rem;
@@ -210,11 +213,10 @@ main .page {
 
 .card {
   width: 30%;
-  margin: 1rem;
-  border: solid 1px #c60929;
+  margin: 30px;
   background-color: white;
   box-shadow: 0px 2px 20px #a5aeb4;
-  border-radius: 0.2rem;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -228,5 +230,7 @@ main .page {
 }
 
 .card-body p {
-  padding: 1rem;
+  margin: 0 30px 30px 30px;
+  padding: 0rem;
+  text-align: center;
 }
