@@ -13,69 +13,21 @@ function Footer() {
       <div className={styles["footer-container"]}>
         <div className={styles["footer-row"]}>
           <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "About" : "Về chúng tôi"}</h4>
+            <h4>{isLanguageEnglish ? "Made by:" : "Nhóm sinh viên thực hiện:"}</h4>
             <ul>
               <li>
-                <a href="/">{isLanguageEnglish ? "Company" : "Công ty"}</a>
+                <a href="/">Bùi Phan Thọ</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "Service" : "Dịch vụ"}</a>
+                <a href="/">17xxxxxx</a>
               </li>
               <li>
-                <a href="/">Blog</a>
+                <a href="/">Lê Nguyễn Thạnh Trung</a>
               </li>
               <li>
-                <a href="/">{isLanguageEnglish ? "Contact" : "Liên hệ"}</a>
+                <a href="/">18120099</a>
               </li>
             </ul>
-          </div>
-          <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Application" : "Ứng dụng"}</h4>
-            <ul>
-              <li>
-                <a href="/">{isLanguageEnglish ? "At home" : "Tại nhà"}</a>
-              </li>
-              <li>
-                <a href="/">{isLanguageEnglish ? "At school" : "Tại trường"}</a>
-              </li>
-              <li>
-                <a href="/">{isLanguageEnglish ? "At work" : "Tại nơi làm việc"}</a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Terms and conditions" : "Các điều khoản và điều kiện"}</h4>
-            <ul>
-              <li>
-                <a href="/">
-                  {isLanguageEnglish ? "Terms and conditions" : "Các điều khoản và điều kiện"}
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  {isLanguageEnglish
-                    ? "Privacy Policy"
-                    : "Chính sách bảo mật"}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles["footer-column"]}>
-            <h4>{isLanguageEnglish ? "Follow us" : "Theo dõi chúng tôi"}</h4>
-            <div className={styles["footer-social-links"]}>
-              <a href="/">
-                <FacebookIcon />
-              </a>
-              <a href="/">
-                <TwitterIcon />
-              </a>
-              <a href="/">
-                <InstagramIcon />
-              </a>
-              <a href="/">
-                <LinkedInIcon />
-              </a>
-            </div>
           </div>
         </div>
       </div>

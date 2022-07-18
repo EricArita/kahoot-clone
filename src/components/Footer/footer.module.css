@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 .footer {
@@ -12,12 +12,15 @@
 
 .footer-row {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .footer-column {
   width: 25%;
   padding: 0 15px;
+  text-align: center;
 }
 
 .footer-column h4 {
@@ -27,16 +30,6 @@
   margin-bottom: 20px;
   font-weight: 500;
   position: relative;
-}
-
-.footer-column h4::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 2px;
-  width: 50px;
-  background-color: #e91e63;
 }
 
 .footer-column ul li {
