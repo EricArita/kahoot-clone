@@ -72,10 +72,9 @@ export const getQuestions = () => async (dispatch) => {
 
 export const createQuiz = (quiz, history) => async (dispatch) => {
   try {
-    // TODO: Call to backend instead to create quiz
-
-    dispatch({ type: CREATE_QUIZ, payload: quiz })
-    history.push(`/myquizes/${quiz._id}`)
+    const { data } = await api.createQuiz(quiz)
+    dispatch({ type: CREATE_QUIZ, payload: data })
+    history.push(`/myquizes/${data._id}`)
   } catch (error) {
     console.log(error)
   }
@@ -129,7 +128,6 @@ export const likeQuiz = (quizId) => async (dispatch) => {
 
 export const getQuiz = (id) => async (dispatch) => {
   try {
-    // TODO: Call backend to get quiz by id
     const { data } = await api.fetchQuiz(id)
     dispatch({ type: FETCH_QUIZ, payload: { quiz: data } })
   } catch (error) {

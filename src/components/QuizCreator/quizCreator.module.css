@@ -306,6 +306,7 @@ p{
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .option-button:nth-of-type(1) {

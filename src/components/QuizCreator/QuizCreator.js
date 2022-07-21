@@ -11,17 +11,23 @@ import timer from "../../assets/timer.svg"
 import gamePoints from "../../assets/gamePoints.svg"
 import answerOptions from "../../assets/answerOptions.svg"
 import { useDispatch, useSelector } from "react-redux"
-import { updateQuiz, getQuiz } from "../../redux/thunk-middlewares/quizMiddleware"
+import { updateQuiz, getQuiz, getTeacherQuizes } from "../../redux/thunk-middlewares/quizMiddleware"
 import FileBase from "react-file-base64"
 import { useParams, useHistory } from "react-router-dom"
 
 function QuizCreator() {
-  const user = JSON.parse(localStorage.getItem("DEFAULT_USEER"))
+  const user = JSON.parse(localStorage.getItem("profile"))
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
   const quizes = useSelector((state) => state.quiz.quizes)
   const history = useHistory()
   const dispatch = useDispatch()
   const { id } = useParams()
+
+  const [isQuizOptionsVisible, setIsQuizOptionsVisible] = useState(false)
+  const [isQuizPublic, setIsQuizPublic] = useState(true)
+  const [isQuestionDataSave, setIsQuestionDataSave] = useState(false)
+  const [questionImage, setQuestionImage] = useState("")
+  const [quizImage, setQuizImage] = useState("")
 
   const [quizData, setQuizData] = useState({
     _id: 0,
@@ -48,19 +54,18 @@ function QuizCreator() {
       { name: "c", body: "", isCorrect: false },
       { name: "d", body: "", isCorrect: false },
     ],
-    questionIndex: 1,
+    questionIndex: -1,
   })
 
   useEffect(() => {
-    const currQuiz = quizes.find(q => q._id === parseInt(id))
-    setQuizData({ ...currQuiz })
-  }, [])
-
-  const [isQuizOptionsVisible, setIsQuizOptionsVisible] = useState(false)
-  const [isQuizPublic, setIsQuizPublic] = useState(true)
-  const [isQuestionDataSave, setIsQuestionDataSave] = useState(false)
-  const [questionImage, setQuestionImage] = useState("")
-  const [quizImage, setQuizImage] = useState("")
+    if (quizes !== undefined && quizes.length > 0) {
+      const currQuiz = quizes.find(q => q._id === id)
+      setQuizData({ ...currQuiz })
+    }
+    else {
+      dispatch(getTeacherQuizes(user?.result._id))
+    } 
+  }, [quizes])
 
   const showQuizOptions = () => {
     setIsQuizOptionsVisible(
@@ -88,18 +93,7 @@ function QuizCreator() {
   }
 
   const handleQuizSubmit = (e) => {
-    let quiz = {
-      name: "",
-      creatorName: `${user?.result.firstName} ${user?.result.lastName}`,
-      backgroundImage: "",
-      description: "",
-      pointsPerQuestion: 1,
-      numberOfQuestions: 0,
-      isPublic: true,
-      tags: [],
-      questionList: [],
-    }
-    dispatch(updateQuiz(quiz._id, quiz))
+    dispatch(updateQuiz(quizData._id, quizData))
     history.push(`/myquizes`)
   }
 
@@ -133,18 +127,18 @@ function QuizCreator() {
   const handleQuestionSubmit = () => {
     if (questionData.question === "") {
       alert("Enter your question")
-    } else if (!validateAnswerFields()) {
+    } 
+    else if (!validateAnswerFields()) {
       alert("Enter your reply text")
-    } else if (!validateCorrectAnswer()) {
+    } 
+    else if (!validateCorrectAnswer()) {
       alert("Choose the correct answer")
-    } else {
+    } 
+    else {
       setIsQuestionDataSave(true)
+
       // if true it means question already exist and is only updated
-      if (
-        quizData.questionList.filter(
-          (question) => question.questionIndex === questionData.questionIndex
-        )
-      ) {
+      if (questionData.questionIndex !== -1) {
         //update list of questions in quizData
         setQuizData((prevState) => ({
           ...prevState,
@@ -159,6 +153,8 @@ function QuizCreator() {
         }))
       } else {
         //question don't exist - add new one
+        questionData.questionIndex = quizData.questionList.length + 1
+        console.log(questionData)
         setQuizData({
           ...quizData,
           questionList: [...quizData.questionList, questionData],
@@ -276,12 +272,6 @@ function QuizCreator() {
                     ? "Set quiz name"
                     : "Đặt tên bài kiểm tra"}
               </h1>
-              {/* <button
-            className={styles["quiz-info-button"]}
-            onClick={showQuizOptions}
-          >
-            {isLanguageEnglish ? "Settings" : "Cài đặt "}
-          </button> */}
             </div>
             <div className={styles["question-list-container"]}>
               <button
@@ -366,7 +356,7 @@ function QuizCreator() {
                       : alert(
                         isLanguageEnglish
                           ? "You already choose the correct answer"
-                          : "Bạn đã chọn đúng"
+                          : "Bạn đã chọn lựa đán án đúng"
                       )
                   }}
                   isAnswerCorrect={questionData.answerList[0].isCorrect}

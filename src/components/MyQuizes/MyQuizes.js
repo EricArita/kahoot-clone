@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react"
 import MyQuiz from "./MyQuiz/MyQuiz"
 import { useDispatch, useSelector } from "react-redux"
@@ -7,13 +8,13 @@ import { useHistory } from "react-router-dom"
 import { quizExample } from "../../constants/quizData"
 
 function MyQuizes() {
-  const user = JSON.parse(localStorage.getItem("DEFAULT_USER"))
+  const user = JSON.parse(localStorage.getItem("profile"))
   const dispatch = useDispatch()
   const history = useHistory()
   const isLanguageEnglish = useSelector((state) => state.language.isEnglish)
   const [quizData, setQuizData] = useState({
     name: "",
-    creatorName: `${user?.firstName} ${user?.lastName}`,
+    creatorName: `${user?.result.firstName} ${user?.result.lastName}`,
     backgroundImage: "",
     description: "",
     pointsPerQuestion: 1,
@@ -31,8 +32,12 @@ function MyQuizes() {
   }
 
   const handleQuizChange = (e) => {
-    setQuizData({ ...quizData, _id: quizes.length + 1, [e.target.name]: e.target.value })
+    setQuizData({ ...quizData, [e.target.name]: e.target.value })
   }
+
+  useEffect(() => {
+    dispatch(getTeacherQuizes(user?.result._id))
+  }, []);
 
   return (
     <div className={styles["quizes-list"]}>
