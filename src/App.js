@@ -14,15 +14,13 @@ import JoinGame from "./components/Game/JoinGame/JoinGame"
 import { io } from "socket.io-client"
 import { useDispatch } from "react-redux"
 import { createSocket } from "./redux/thunk-middlewares/socket"
-import { defaultUser } from "../src/constants/defaultUser"
 
 function App() {
   const user = JSON.parse(localStorage.getItem("profile"))
   const dispatch = useDispatch()
 
   useEffect(() => {
-   //initialSocket();
-   initialDefaultUser();
+   initialSocket();
   }, [])
 
   const initialSocket = async () => {
@@ -32,20 +30,16 @@ function App() {
     return () => socket.disconnect()
   }
 
-  const initialDefaultUser = () => {
-    localStorage.setItem("DEFAULT_USER", JSON.stringify(defaultUser))
-  }
-
   return (
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/auth" exact component={() => (user === null ? <Auth /> : <Redirect to="/" />)} />
-        <Route path="/quizes" exact component={Quizes} />
-        <Route path="/quizes/search" exact component={Quizes} />
-        <Route path="/quizes/:id" exact component={QuizDetails} />
-        <Route path="/myquizes/:id" exact component={QuizCreator} />
+        <Route path="/" exact component={() => (user === null ? <Auth /> : <Home />)} />
+        <Route path="/auth" exact component={Auth} />
+        <Route path="/quizes" exact component={() => (user === null ? <Auth /> : <Quizes />)} />
+        <Route path="/quizes/search" exact component={() => (user === null ? <Auth /> : <Quizes />)} />
+        <Route path="/quizes/:id" exact component={() => (user === null ? <Auth /> : <QuizDetails />)} />
+        <Route path="/myquizes/:id" exact component={() => (user === null ? <Auth /> : <QuizCreator />)} />
         <Route path="/games/joingame" exact component={JoinGame} />
         <Route path="/games/host/:id" exact component={HostScreen} />
         <Route path="/games/player/:id" exact component={PlayerScreen} />
