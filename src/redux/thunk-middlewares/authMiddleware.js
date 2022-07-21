@@ -3,8 +3,7 @@ import { AUTH } from "../../constants/actionTypes";
 
 export const loginMiddleware = (formData, history) => async (dispatch) => {
   try {
-    //const { data } = await api.login(formData);
-    let data = {}
+    const { data } = await api.login(formData);
     dispatch({ type: AUTH, data });
     history.push("/");
   } catch (error) {

@@ -28,6 +28,7 @@ function QuizCreator() {
   const [isQuestionDataSave, setIsQuestionDataSave] = useState(false)
   const [questionImage, setQuestionImage] = useState("")
   const [quizImage, setQuizImage] = useState("")
+  const [isSelectedImage, setIsSelectedImage] = useState(false)
 
   const [quizData, setQuizData] = useState({
     _id: 0,
@@ -71,6 +72,12 @@ function QuizCreator() {
     setIsQuizOptionsVisible(
       (prevIsQuizOptionsVisible) => !prevIsQuizOptionsVisible
     )
+  }
+
+  const removeImage = () => {
+    setQuestionImage("")
+    setIsSelectedImage(false)
+    setQuestionData({...questionData, backgroundImage: "" })
   }
 
   const setCorrectAnswer = (index) => {
@@ -321,23 +328,30 @@ function QuizCreator() {
               }
               className={styles["question-name"]}
             />
-            <div className={styles["image-container"]}>
+            <div className={styles["image-container"]} style={{ height: isSelectedImage ? "350px" : "315px" }}>
               <h3>
                 {isLanguageEnglish
                   ? "Find and upload an image"
                   : "Tải ảnh lên"}
               </h3>
-              <div>
+              {!isSelectedImage ? <div>
                 <FileBase
                   type="file"
                   multiple={false}
                   onDone={({ base64 }) => {
                     setQuestionData({ ...questionData, backgroundImage: base64 })
                     setQuestionImage(base64)
+                    setIsSelectedImage(true)
                   }}
                 />
-              </div>
+              </div> : <div></div>}
               {questionImage && <img src={questionImage} alt="" />}
+              {isSelectedImage ? <div><button
+                className={styles["remove-button"]}
+                onClick={removeImage}
+              >
+                {isLanguageEnglish ? "Remove" : "Xoá"}
+              </button></div> : <div></div>}
             </div>
             <div className={styles["answers-container"]}>
               <div className={styles["answer-field"]}>
@@ -479,9 +493,9 @@ function QuizCreator() {
                     setIsQuizPublic(true)
                     setQuizData({ ...quizData, isPublic: true })
                   }}
-                  className={styles["option-button"]}
+                  className={styles["access-button"]}
                   style={{
-                    backgroundColor: isQuizPublic ? "rgb(19, 104, 206)" : "inherit",
+                    backgroundColor: isQuizPublic ? "#084a74" : "inherit",
                     color: isQuizPublic ? "white" : "rgb(110, 110, 110)",
                   }}
                 >
@@ -492,9 +506,9 @@ function QuizCreator() {
                     setIsQuizPublic(false)
                     setQuizData({ ...quizData, isPublic: false })
                   }}
-                  className={styles["option-button"]}
+                  className={styles["access-button"]}
                   style={{
-                    backgroundColor: isQuizPublic ? "inherit" : "rgb(19, 104, 206)",
+                    backgroundColor: isQuizPublic ? "inherit" : "#084a74",
                     color: isQuizPublic ? "rgb(110, 110, 110)" : "white",
                   }}
                 >
@@ -502,7 +516,7 @@ function QuizCreator() {
                 </button>
               </div>
               <div className={styles["option-label"]}>
-                <label>
+                <label className={styles["bg-image"]}>
                   {isLanguageEnglish ? "Background Image" : "Ảnh nền"}
                 </label>
               </div>
@@ -520,7 +534,7 @@ function QuizCreator() {
                 <img className={styles["quiz-image"]} src={quizImage} alt="" />
               )}
               <div className={styles["option-label"]}>
-                <label>
+                <label className={styles["tag-label"]}>
                   Tags
                 </label>
               </div>

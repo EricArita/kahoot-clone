@@ -36,6 +36,7 @@ function Auth() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    
     if (isSignup) {
       dispatch(registerMiddleware(formData, history))
     } else {

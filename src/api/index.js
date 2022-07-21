@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API = axios.create({ baseURL: "http://localhost:1000/api" })
+const API = axios.create({ baseURL: "http://localhost:4000/api" })
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
@@ -9,6 +9,16 @@ API.interceptors.request.use((req) => {
     }`
   }
   return req
+})
+
+API.interceptors.response.use((res) => res, function (error) {
+  const errorCode = error.response.status
+  if (errorCode === 401 || errorCode === 403) {
+    localStorage.removeItem("profile")
+    window.location.href = 'http://localhost:3000/auth'
+  }
+
+  return Promise.reject(error);
 })
 
 export const fetchUsers = () => API.get("/users")
@@ -63,7 +73,7 @@ export const updateQuestionLeaderboard = (questionResult, id) =>
 export const updateCurrentLeaderboard = (result, id) =>
   API.patch(`/leaderboard/${id}/currentleaderboard`, result)
 
-const AUTH_API = axios.create({ baseURL: "http://localhost:4000/api/auth" })
+const AUTH_API = axios.create({ baseURL: "http://localhost:5000/api/auth" })
 
 export const login = (formData) => AUTH_API.post("/login", formData)
 export const register = (formData) => AUTH_API.post("/register", formData)

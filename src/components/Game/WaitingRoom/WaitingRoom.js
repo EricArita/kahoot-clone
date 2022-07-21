@@ -19,8 +19,8 @@ function WaitingRoom({ pin, socket }) {
       </h1>
       <h2 className={styles["header"]}>
         {isLanguageEnglish
-          ? "Show PIN to your students"
-          : "Hiển thị mã pin cho học sinh của bạn"}
+          ? "Show PIN to your players"
+          : "Hiển thị mã pin cho người chơi"}
         : {pin}
       </h2>
       <div className={styles["players-list"]}>
@@ -33,7 +33,7 @@ function WaitingRoom({ pin, socket }) {
               {playerList.map((player) => (
                 <li>
                   <mark>{player.userName}</mark>
-                  <small>{isLanguageEnglish ? "Student" : "Học sinh"}</small>
+                  <small>{isLanguageEnglish ? "Player" : "Người chơi"}</small>
                 </li>
               ))}
             </ol>
