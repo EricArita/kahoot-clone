@@ -161,7 +161,7 @@ function HostScreen() {
       })
     }
   }
-  console.log(playerList)
+
   return (
     <div className={styles.page}>
       {!isGameStarted && (
@@ -195,7 +195,7 @@ function HostScreen() {
               {isLanguageEnglish ? "Question result" : "Kết quả của câu hỏi"}
             </h1>
             <ol>
-              {questionResult.questionResultList.map((player) => (
+              {questionResult?.questionResultList.map((player) => (
                 <li>
                   {playerList
                     .filter((x) => x.id === player.playerId)

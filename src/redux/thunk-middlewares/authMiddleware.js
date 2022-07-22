@@ -4,6 +4,7 @@ import { AUTH } from "../../constants/actionTypes";
 export const loginMiddleware = (formData, history) => async (dispatch) => {
   try {
     const { data } = await api.login(formData);
+    if (data?.accessToken !== "") localStorage.setItem("profile", JSON.stringify(data))
     dispatch({ type: AUTH, data });
     history.push("/");
   } catch (error) {

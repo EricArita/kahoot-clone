@@ -32,7 +32,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
+      {user && <Navbar />}
       <Switch>
         <Route path="/" exact component={() => (user === null ? <Auth /> : <Home />)} />
         <Route path="/auth" exact component={Auth} />

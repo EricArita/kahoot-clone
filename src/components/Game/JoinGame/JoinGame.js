@@ -34,7 +34,7 @@ function JoinGame() {
       dispatch(addPlayer(gameId, playerId))
       setIsPlayerAdded(true)
     } else {
-      alert("Podałeś zły pin lub gra nie istnieje")
+      alert(isLanguageEnglish ? "Pin is not correct or game does not exist" : "Mã pin không chính xác hoặc trò chơi không tồn tại")
     }
   }
 
@@ -63,7 +63,7 @@ function JoinGame() {
             }
           />
           <button onClick={joinGame}>
-            {isLanguageEnglish ? "Send" : "Gửi"}
+            {isLanguageEnglish ? "Join" : "Tham gia"}
           </button>
         </div>
       ) : (
@@ -72,7 +72,7 @@ function JoinGame() {
             {isLanguageEnglish ? "You joined the game" : "Bạn đã tham gia trò chơi"}
           </h2>
           <h4>
-            {isLanguageEnglish ? "Waiting on a host to start the game" : "Chờ người chủ trì bắt đầu trò chơi"}
+            {isLanguageEnglish ? "Waiting on a host to start the game" : "Chờ quản trị viên bắt đầu trò chơi"}
           </h4>
           <CircularProgress />
         </div>

@@ -44,32 +44,10 @@ function Navbar() {
                 <img src={logo} alt="logo" className={styles["logo-img"]} />
               </Link>
             </li>
-            <li className={styles["nav__list-item"]}>
-              {isLanguageEnglish ? "About" : "Về chúng tôi"}
-              <ul className={styles["nav__list-item-drop"]}>
-                <li>{isLanguageEnglish ? "How it works" : "Nó hoạt động như thế nào"} </li>
-                <li>{isLanguageEnglish ? "Ways to play" : "Cách chơi"}</li>
-              </ul>
-            </li>
-            <li className={styles["nav__list-item"]}>
-              {isLanguageEnglish ? "Study" : "Học"}
-              <ul className={styles["nav__list-item-drop"]}>
-                <li>
-                  <Link to="/quizes">
-                    {isLanguageEnglish ? "Public quizes" : "Câu đố công khai"}
-                  </Link>
-                </li>
-                <li>{isLanguageEnglish ? "Test game" : "Thử nghiệm trò chơi"}</li>
-              </ul>
-            </li>
           </ul>
         </div>
         <div className={styles["menu-left"]}>
           <ul className={styles.nav__list}>
-            <li className={styles["nav__list-item"]}>
-              {isLanguageEnglish ? "Contact" : "Liên hệ"}
-            </li>
-
             {user === 1 ? (
               <>
                 <li className={styles["nav__list-item"]}>

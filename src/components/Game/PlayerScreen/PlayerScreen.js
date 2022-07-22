@@ -43,6 +43,7 @@ function PlayerScreen() {
       setIsResultScreen(false)
       startPreviewCountdown(5)
     })
+    
     socket.on("host-start-question-timer", (time, question) => {
       setQuestionData(question.answerList)
       startQuestionCountdown(time)
